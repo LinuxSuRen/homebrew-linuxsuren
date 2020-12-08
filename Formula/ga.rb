@@ -2,20 +2,20 @@
 class Ga < Formula
   desc "ga is a tiny tool for alias your CLI."
   homepage "https://github.com/linuxsuren/go-cli-alias"
-  version "0.0.3"
+  version "0.0.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/LinuxSuRen/go-cli-alias/releases/download/v0.0.3/ga-darwin-amd64.tar.gz"
-    sha256 "45bcdb0106280c69c7f509346318810f6e81746e1ec81a0c91607418ae02956d"
+    url "https://github.com/LinuxSuRen/go-cli-alias/releases/download/v0.0.4/ga-darwin-amd64.tar.gz"
+    sha256 "2e74e570cf37bb5dbaf96fd5168b8e41a7dd9b7b42677d35468500eb41e2ab0a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/go-cli-alias/releases/download/v0.0.3/ga-linux-amd64.tar.gz"
-    sha256 "223ece817b2307689391ac489c8de99b44ef0b371147553cad547d8ec5250809"
+    url "https://github.com/LinuxSuRen/go-cli-alias/releases/download/v0.0.4/ga-linux-amd64.tar.gz"
+    sha256 "39c892d514168c0feec9986b235a4417e674c8eea93c2fa607eca0bd2b744fbb"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/go-cli-alias/releases/download/v0.0.3/ga-linux-arm64.tar.gz"
-    sha256 "e0d10c13dc631ba2c8be6cf9bed8361bfc4645389aff649a1631d70209260acd"
+    url "https://github.com/LinuxSuRen/go-cli-alias/releases/download/v0.0.4/ga-linux-arm64.tar.gz"
+    sha256 "3f2264f127bc59eedb5c9dc53da15ab5a0c065661dba520de1e5d9f9c4c588ba"
   end
 
   depends_on "vim" => :optional
