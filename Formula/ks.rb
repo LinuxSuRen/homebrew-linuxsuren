@@ -2,20 +2,20 @@
 class Ks < Formula
   desc "ks is a kubectl wrapper for Kubesphere"
   homepage "https://github.com/linuxsuren/ks"
-  version "0.0.4"
+  version "0.0.5"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.4/ks-darwin-amd64.tar.gz"
-    sha256 "e4b3544ba02279c054c156c7788b4036ba62dc6d078d1a9c002ba0e582892b41"
+    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.5/ks-darwin-amd64.tar.gz"
+    sha256 "e0a871c282004b561482bcf6a3bffd749d3a3ef1a9a4eb2886f99a9f7699200e"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.4/ks-linux-amd64.tar.gz"
-    sha256 "b5b46d8b23894d4ff967fda1922b2d4bdf2f48555f3daeec8c7fe5512da24ffa"
+    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.5/ks-linux-amd64.tar.gz"
+    sha256 "98b0d5dd2a092b31d6964ccd4601e564a96feb796b33768fa9086afb4863b384"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.4/ks-linux-arm64.tar.gz"
-    sha256 "8e687eddec1a11c4010b4aef7938fd5d9c1953826b81e3a8b0cb9ee1b1629dc9"
+    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.5/ks-linux-arm64.tar.gz"
+    sha256 "3e10eefd1a51d0e94e1b0d2b0ec2d69a229a119a09f07001c3c2282271feae5d"
   end
 
   depends_on "vim" => :optional
