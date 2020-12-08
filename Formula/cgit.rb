@@ -2,20 +2,20 @@
 class Cgit < Formula
   desc "cgit is a tiny tool for Chinese developers."
   homepage "https://github.com/linuxsuren/cgit"
-  version "0.0.7"
+  version "0.0.8"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.7/cgit-darwin-amd64.tar.gz"
-    sha256 "f3b8dba7d678d255925084b9937e9cd3e58a8608497ff3c658590420cb01181f"
+    url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.8/cgit-darwin-amd64.tar.gz"
+    sha256 "4ad7c51abb480cd9171b81deceb456e4ed711c557681f4ec1b36f71270e11b1c"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.7/cgit-linux-amd64.tar.gz"
-    sha256 "9f1e1678cc09bbbbe49005296bf6d8f658edcff29d01a318a117097d866a9a43"
+    url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.8/cgit-linux-amd64.tar.gz"
+    sha256 "62bb81a87d3549dae63e69ab619e873a5a330984e7510ec016e03adfe60de9e4"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.7/cgit-linux-arm64.tar.gz"
-    sha256 "b5bbd1b546804deb34a9dd842a7d539960d4f5a756dcbedabefdc83c1e09a411"
+    url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.8/cgit-linux-arm64.tar.gz"
+    sha256 "847d9baea2ef182cb7c88b5706f60d9aa4bc2f013b57b863004d2a71e168238e"
   end
 
   depends_on "vim" => :optional
