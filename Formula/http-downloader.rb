@@ -2,20 +2,20 @@
 class HttpDownloader < Formula
   desc "cgit is a tiny tool for Chinese developers."
   homepage "https://github.com/linuxsuren/http-downloader"
-  version "0.0.1"
+  version "0.0.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.1/http-downloader-darwin-amd64.tar.gz"
-    sha256 "e3661ca5a5ca59a3a879b8f5954873594c3560972a32096d5529a6e48e8eff4a"
+    url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.2/http-downloader-darwin-amd64.tar.gz"
+    sha256 "bb919ec9a9540f2a4120dfa04571a2e937f69278e434a80a2fe07d1ecaace18b"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.1/http-downloader-linux-amd64.tar.gz"
-    sha256 "1eca2e2c285f47ee04b008207846082ef73ec862970eab8fe726b76022aed00b"
+    url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.2/http-downloader-linux-amd64.tar.gz"
+    sha256 "456ab0549093456ab6194dacff8ed30a94b032887b1a3e3a0186b2bdc73129f8"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.1/http-downloader-linux-arm64.tar.gz"
-    sha256 "085ba664f6d8bb5a2d3319fe7df7fa2618c84f9a2e0a6360ecf9f51732de868f"
+    url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.2/http-downloader-linux-arm64.tar.gz"
+    sha256 "b0f768cf9427461077716d4729d424cf31c7248d55fe26b11178c7da1171cb05"
   end
 
   depends_on "vim" => :optional
