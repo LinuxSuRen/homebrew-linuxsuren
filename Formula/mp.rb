@@ -5,23 +5,22 @@
 class Mp < Formula
   desc "image mirror pull tool"
   homepage "https://github.com/linuxsuren/mirrors"
-  version "0.0.1"
+  version "0.0.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.1/mp-darwin-amd64.tar.gz"
-    sha256 "e527e5b4ccca91d845192e31081c704b47e9f4b48e5a50c67f0e347cd9d6b6a8"
+    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.2/mp-darwin-amd64.tar.gz"
+    sha256 "534a57760f834b8255f4ada18ee55e430324e7f59bb638768288fbfe390a9c4a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.1/mp-linux-amd64.tar.gz"
-    sha256 "2c29fec34a69a7053ec6092c895c2ccd418ee55128f393ab8d723dd81f6d0aec"
+    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.2/mp-linux-amd64.tar.gz"
+    sha256 "56d645dcc183c33b8006dcfa44c04e3f1902d911a798f9958f6e7fc9fd2c46ec"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.1/mp-linux-arm64.tar.gz"
-    sha256 "bed3f1ad58d69453078dfd8d0cbcdd9707ab48226499b432ae74310a1f7382a6"
+    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.2/mp-linux-arm64.tar.gz"
+    sha256 "44ea459a0ecee896959179b3deea7f995e058a0324b2463132b7e47ce9b74647"
   end
 
-  depends_on "vim" => :optional
   depends_on "bash-completion" => :optional
 
   def install
