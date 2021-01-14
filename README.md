@@ -1,5 +1,17 @@
 # homebrew-linuxsuren
 
+# For Linux users
+It's pretty easy to install brew in Linux. Please see the following commands (or get details from https://brew.sh/):
+```
+useradd -m linuxbrew
+su linuxbrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+```
+
 # Git clone faster
 ```
 brew install linuxsuren/linuxsuren/cgit
