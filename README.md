@@ -12,6 +12,11 @@ test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>
 echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 ```
 
+# HTTP downloader
+```
+brew install linuxsuren/linuxsuren/hd
+```
+
 # Git clone faster
 ```
 brew install linuxsuren/linuxsuren/cgit
