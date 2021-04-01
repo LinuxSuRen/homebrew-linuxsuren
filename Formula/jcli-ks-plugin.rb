@@ -5,20 +5,20 @@
 class JcliKsPlugin < Formula
   desc "cgit is a tiny tool for Chinese developers."
   homepage "https://github.com/linuxsuren/jcli-ks-plugin"
-  version "0.0.1"
+  version "0.0.2"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/jcli-ks-plugin/releases/download/v0.0.1/jcli-ks-plugin-darwin-amd64.tar.gz"
-    sha256 "c46e73b0e59d1405f02f11b62413c51be6c8a51c37548601e341ea0f94cd2cc1"
+    url "https://github.com/LinuxSuRen/jcli-ks-plugin/releases/download/v0.0.2/jcli-ks-plugin-darwin-amd64.tar.gz"
+    sha256 "43f96cce3f25703a46180b83a2c6b7012f4f29a349eea07d5dbec494603548b3"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/jcli-ks-plugin/releases/download/v0.0.1/jcli-ks-plugin-linux-amd64.tar.gz"
-    sha256 "aaa2cc45552825b014bfa1ae14b8f5c808f8db48e1ae2d3788e9c0fbaab2b631"
+    url "https://github.com/LinuxSuRen/jcli-ks-plugin/releases/download/v0.0.2/jcli-ks-plugin-linux-amd64.tar.gz"
+    sha256 "d7f0c99c2e3a98f2e898c6a27ccef0742e6623e3b03ce8b8f917cad13c746969"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/jcli-ks-plugin/releases/download/v0.0.1/jcli-ks-plugin-linux-arm64.tar.gz"
-    sha256 "4737b508d09117036326082e7bfc39971e875ec185464b05bba00eb2d5517405"
+    url "https://github.com/LinuxSuRen/jcli-ks-plugin/releases/download/v0.0.2/jcli-ks-plugin-linux-arm64.tar.gz"
+    sha256 "4d99c4cc511c7087b0ea9ad31ee52456692435b803f65e01471a2d78d0ccbca5"
   end
 
   depends_on "vim" => :optional
