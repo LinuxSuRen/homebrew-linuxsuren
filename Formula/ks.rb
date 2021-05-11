@@ -5,20 +5,20 @@
 class Ks < Formula
   desc "ks is a tool which makes it be easy to work with KubeSphere."
   homepage "https://github.com/linuxsuren/ks"
-  version "0.0.32"
+  version "0.0.33"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.32/ks-darwin-amd64.tar.gz"
-    sha256 "8a03e65a610c7428a0a6bb6bddb33a55e1dcd97b51d19b5f2771c848a2b05535"
+    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.33/ks-darwin-amd64.tar.gz"
+    sha256 "5928423b87e87ac92705aad03d5b5096f5d559a01654eb6afe10e0102142c06e"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.32/ks-linux-amd64.tar.gz"
-    sha256 "e8cbcdfcd8183c069d278d286fa1dbbed33539411d38a32c341f165843ac5cc4"
+    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.33/ks-linux-amd64.tar.gz"
+    sha256 "3e881669bc5daf36daa019c85aaf94589a5d9138bd0ab7bba4bb94c08604acc8"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.32/ks-linux-arm64.tar.gz"
-    sha256 "98c53cc2aaf82f4988aacd30af40fb989d7e7c23ab1bb859337be66a87681be5"
+    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.33/ks-linux-arm64.tar.gz"
+    sha256 "bb7359342dd1ea67668113cd4e3736aed7bb48f06d581ffc236b5983cdde9ce0"
   end
 
   depends_on "vim" => :optional
