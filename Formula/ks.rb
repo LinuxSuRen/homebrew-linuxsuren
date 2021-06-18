@@ -5,20 +5,25 @@
 class Ks < Formula
   desc "ks is a tool which makes it be easy to work with KubeSphere."
   homepage "https://github.com/linuxsuren/ks"
-  version "0.0.34"
+  version "0.0.35"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.34/ks-darwin-amd64.tar.gz"
-    sha256 "7e76af7b27606cff0ca233a1a25a2a08c04eb6f42e16a43dcde399e612d5ab79"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.35/ks-darwin-amd64.tar.gz"
+      sha256 "0c7bc6728b0c34f4a8fe4e233d215ce648940e226ccd92af395cfa5bce9284d6"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.34/ks-linux-amd64.tar.gz"
-    sha256 "831f770085207d671317aa1ad1475859ff7e9b0b05a2c2d0ff2aeffbfe235ba4"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.34/ks-linux-arm64.tar.gz"
-    sha256 "5cb4c60d9adb164e77a8dd1d410f5263c6334d2b6f6ecc3bb67ff4984bbd913b"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.35/ks-linux-amd64.tar.gz"
+      sha256 "349d9bf85e5a70a117cefa7b6e4f0724d6dfbf794426a6574f8ff4323b77883f"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/LinuxSuRen/ks/releases/download/v0.0.35/ks-linux-arm64.tar.gz"
+      sha256 "3242c0e21084713265d50295207252e3826b0c475b66b9f89d9a05c36baa43e7"
+    end
   end
 
   depends_on "vim" => :optional
