@@ -5,20 +5,25 @@
 class Hd < Formula
   desc "HTTP download tool"
   homepage "https://github.com/linuxsuren/http-downloader"
-  version "0.0.29"
+  version "0.0.30"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.29/hd-darwin-amd64.tar.gz"
-    sha256 "c508efdc299cf2f4115d77d04d9227cf0ee2925f88968b44c1495cb20186d021"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.30/hd-darwin-amd64.tar.gz"
+      sha256 "2a3cac6556cf7c2eed00f9d0e8772495d10aa17011540df0cd6fdfec50147282"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.29/hd-linux-amd64.tar.gz"
-    sha256 "88fd8baa535c3e08f2d11c90a231607922f9b53a054a06921992d3065e7723b5"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.29/hd-linux-arm64.tar.gz"
-    sha256 "0fffb04f531338ef5c58b46df2ab6f70b96b44f9d1f1c63f5f86715ac49e5b08"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.30/hd-linux-amd64.tar.gz"
+      sha256 "9841f70f06c6b67bd5ec14f7ecab4684ae74ee426ec0c999cec9deb424462661"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.30/hd-linux-arm64.tar.gz"
+      sha256 "513ee672dea7693f4a3fd18acbafcf5c97bc728f23e1820e1f2ec04f3f6b5d39"
+    end
   end
 
   depends_on "bash-completion" => :optional
