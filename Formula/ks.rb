@@ -5,28 +5,28 @@
 class Ks < Formula
   desc "ks is a tool which makes it be easy to work with KubeSphere."
   homepage "https://github.com/kubesphere-sigs/ks"
-  version "0.0.48"
+  version "0.0.49"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kubesphere-sigs/ks/releases/download/v0.0.48/ks-darwin-amd64.tar.gz"
-      sha256 "64ab1f9e79a5ab49a9596ac86c8300dd54ec855ecb3b215ba761bbde1f4bd763"
+      url "https://github.com/kubesphere-sigs/ks/releases/download/v0.0.49/ks-darwin-amd64.tar.gz"
+      sha256 "22533105a7ee984cd6ae977f7ba5e5dbe9b4584f8b05e9681f1c5f6bcbbe4499"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kubesphere-sigs/ks/releases/download/v0.0.48/ks-darwin-arm64.tar.gz"
-      sha256 "44a0a9a7c6a2b231ce9c2137d4a032db23c3997085afcf7410677588b902824d"
+      url "https://github.com/kubesphere-sigs/ks/releases/download/v0.0.49/ks-darwin-arm64.tar.gz"
+      sha256 "8c57566ef1db4a01c7508a6ff78a05e6b2d1c800d46a082044f6eff445131382"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/kubesphere-sigs/ks/releases/download/v0.0.48/ks-linux-amd64.tar.gz"
-      sha256 "19c0d82d6b0949ece109c18f26f29ae36ce935a40ace4d35ffeb582ab6fbd12f"
+      url "https://github.com/kubesphere-sigs/ks/releases/download/v0.0.49/ks-linux-amd64.tar.gz"
+      sha256 "c2d74abe1f46da7ddb6ac86ca52b6701c8011c9c6840610d1ed730d0f150b1cb"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kubesphere-sigs/ks/releases/download/v0.0.48/ks-linux-arm64.tar.gz"
-      sha256 "0584ed87d14ad776e1482e20e34a73111828a19bd3c0500aa1741a6081f9a4ac"
+      url "https://github.com/kubesphere-sigs/ks/releases/download/v0.0.49/ks-linux-arm64.tar.gz"
+      sha256 "816ed9d552b8f4c92c789f515a10bcb0b929808a9104b935c418ef93229105c6"
     end
   end
 
