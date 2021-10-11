@@ -5,28 +5,28 @@
 class Hd < Formula
   desc "HTTP download tool"
   homepage "https://github.com/linuxsuren/http-downloader"
-  version "0.0.44"
+  version "0.0.45"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.44/hd-darwin-amd64.tar.gz"
-      sha256 "8009da38b940a18296adff4af3ec971df1540102e60dc8142ee625ce3c9d2515"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.45/hd-darwin-amd64.tar.gz"
+      sha256 "9432751626d71812a114e443189c83d932fad6bcff7fd424f2285f9de7767d83"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.44/hd-darwin-arm64.tar.gz"
-      sha256 "f09df6c7b0c2fef638ee5c0ec0e2d4a8c57a8e9d86a041c7e54ac4b4991b6d59"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.45/hd-darwin-arm64.tar.gz"
+      sha256 "52c949588173d26b37dddd9c5264cd64ddc24e065e1ff2f673215ea57d93f3dc"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.44/hd-linux-amd64.tar.gz"
-      sha256 "31716489be21ea27b52862e3e68b719b46a725152a7c667971eb304a475c99aa"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.44/hd-linux-arm64.tar.gz"
-      sha256 "47f9a6755c0408778afd73833e4a07676b4c10e635b8d03f01a2ae273fbca2ed"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.45/hd-linux-arm64.tar.gz"
+      sha256 "80f1b7cc6ace7ea73463b8c7227aa713f3d964b96157d1ceef5ba542f99d7720"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.45/hd-linux-amd64.tar.gz"
+      sha256 "7afea6b1c9867164a1dd29e1dbbf4382e14ae8334233574664fa0def44f8f9e0"
     end
   end
 
