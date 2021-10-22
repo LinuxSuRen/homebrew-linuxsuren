@@ -5,38 +5,55 @@
 class Hd < Formula
   desc "HTTP download tool"
   homepage "https://github.com/linuxsuren/http-downloader"
-  version "0.0.48"
-  bottle :unneeded
+  version "0.0.49"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.48/hd-darwin-amd64.tar.gz"
-      sha256 "886b6bb3a87ec281179f412d1be639e863b11245427eac30f758cadbed07d3cc"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.48/hd-darwin-arm64.tar.gz"
-      sha256 "2a21ea8332b8bfe4d1b33ab9e0b629f6c6eb706a5db9c775130085cae13120e3"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.49/hd-darwin-arm64.tar.gz"
+      sha256 "0d3dae079b6cd98d3d4a755a6e0053267a9476d2fab414f42d319d96bc1e1eb5"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.49/hd-darwin-amd64.tar.gz"
+      sha256 "260538770cab9344a8c1ac936f32c2405fd84d49151452de50e5256c779cba52"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.48/hd-linux-amd64.tar.gz"
-      sha256 "13532404bbb6e1625b98384992495e9f073e1f6af3174681b3a1a412fadabfe8"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.48/hd-linux-arm64.tar.gz"
-      sha256 "b6de319396583fceb2e7d18a9b1aefdf1538ca909ddd9d37cd4474b09fcf4249"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.49/hd-linux-arm64.tar.gz"
+      sha256 "0801e18e0c8664d00b1421d17c3ccfa2feae865f01cd3a60f866525460209d4f"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.49/hd-linux-amd64.tar.gz"
+      sha256 "6c3a6d3cdaa99f993e19fb1231a36aacf1ed7fc1ddae0bf7a1b2361a2d71abee"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
     end
   end
 
   depends_on "bash-completion" => :optional
-
-  def install
-    bin.install name
-
-    prefix.install_metafiles
-  end
 
   test do
     version_output = shell_output("#{bin}/hd version")
