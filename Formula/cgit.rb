@@ -5,30 +5,56 @@
 class Cgit < Formula
   desc "cgit is a tiny tool for Chinese developers."
   homepage "https://github.com/linuxsuren/cgit"
-  version "0.0.9"
-  bottle :unneeded
+  version "0.0.10"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.9/cgit-darwin-amd64.tar.gz"
-    sha256 "3e81f4f2dc440cc47e709848141afc7d514426a52d4a0761294b53b8acb1af9e"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.10/cgit-darwin-amd64.tar.gz"
+      sha256 "40930f71ab796d7f2c77646cbb405a1d80d6af5d3018171ec0f00ed5582ec695"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.10/cgit-darwin-arm64.tar.gz"
+      sha256 "bc517c397295cf2d19ccae5e1bf6eb5ed37ffb43334344dd10ed396a03dffef1"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.9/cgit-linux-amd64.tar.gz"
-    sha256 "00aeeb82103fbd700aeee6ef0e161ab836a02ef395babf7f2e123868bd34167c"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.9/cgit-linux-arm64.tar.gz"
-    sha256 "a28a34e970d45a861e8c3880c07c20affb00712ca150d9570cc9e6d26ac07b4b"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.10/cgit-linux-amd64.tar.gz"
+      sha256 "d225615f1d217200daf00f3e366830bbbdffa3cc47d132990a18f1c8f58bfd2f"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.10/cgit-linux-arm64.tar.gz"
+      sha256 "2454b83d43b74b896b84e1ddf17fba3c31f31453067a2389ff9acfc618b8a60f"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
+    end
   end
 
   depends_on "vim" => :optional
   depends_on "bash-completion" => :optional
-
-  def install
-    bin.install name
-
-    prefix.install_metafiles
-  end
 
   test do
     version_output = shell_output("#{bin}/cgit version")
