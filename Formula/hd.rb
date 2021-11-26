@@ -5,12 +5,12 @@
 class Hd < Formula
   desc "HTTP download tool"
   homepage "https://github.com/linuxsuren/http-downloader"
-  version "0.0.50"
+  version "0.0.51"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.50/hd-darwin-amd64.tar.gz"
-      sha256 "938897f8d6adb26d699fe226b66ae7b3b8c0c0efe172ab30a3da4ad3fb647ee7"
+    if Hardware::CPU.arm?
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.51/hd-darwin-arm64.tar.gz"
+      sha256 "fd7cddceb5d03c61c8571b2d2c41b978511f143c3d91561372559dd5f490a2b0"
 
       def install
         bin.install name
@@ -18,9 +18,9 @@ class Hd < Formula
         prefix.install_metafiles
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.50/hd-darwin-arm64.tar.gz"
-      sha256 "8c0f814e5c154cdf71075eca81c99afc5fe16a0de9ef46e1e68d122ec1f43413"
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.51/hd-darwin-amd64.tar.gz"
+      sha256 "9e0ff231070a964c6a0f7f75c3a9551114230a7b54e6c48c924498db3ee9bcfb"
 
       def install
         bin.install name
@@ -32,8 +32,8 @@ class Hd < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.50/hd-linux-arm64.tar.gz"
-      sha256 "f0b9ab337f7288ad8a975d52c2c6ce5980796b6abf28d81d63a2b5178f69d160"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.51/hd-linux-arm64.tar.gz"
+      sha256 "62d7ff0e2faa8e396aba6b1b185b99d008c4cbe85d291c8a8cd75d66878acd58"
 
       def install
         bin.install name
@@ -42,8 +42,8 @@ class Hd < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.50/hd-linux-amd64.tar.gz"
-      sha256 "840b7eb967ddc300c0afe35b34af2e36e223d9cb774e5c5a75d30c950224b978"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.51/hd-linux-amd64.tar.gz"
+      sha256 "9657c537890ab4b592c8550d76ed9f294d15d3dcee28e7f3e6d49b02bf9da8d9"
 
       def install
         bin.install name
