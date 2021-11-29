@@ -5,12 +5,12 @@
 class Cgit < Formula
   desc "cgit is a tiny tool for Chinese developers."
   homepage "https://github.com/linuxsuren/cgit"
-  version "0.0.10"
+  version "0.0.11"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.10/cgit-darwin-amd64.tar.gz"
-      sha256 "40930f71ab796d7f2c77646cbb405a1d80d6af5d3018171ec0f00ed5582ec695"
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.11/cgit-darwin-amd64.tar.gz"
+      sha256 "698fead2fe9bdb0d8c2ea91aed7dfdc8263c773af843bcd1ff74d12d2627291a"
 
       def install
         bin.install name
@@ -19,8 +19,8 @@ class Cgit < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.10/cgit-darwin-arm64.tar.gz"
-      sha256 "bc517c397295cf2d19ccae5e1bf6eb5ed37ffb43334344dd10ed396a03dffef1"
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.11/cgit-darwin-arm64.tar.gz"
+      sha256 "d5984e25e011822333f9eb85c3c40de218dcf861e154502f329974443d312c6c"
 
       def install
         bin.install name
@@ -31,9 +31,9 @@ class Cgit < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.10/cgit-linux-amd64.tar.gz"
-      sha256 "d225615f1d217200daf00f3e366830bbbdffa3cc47d132990a18f1c8f58bfd2f"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.11/cgit-linux-arm64.tar.gz"
+      sha256 "2bfa6cb7b1a14fc40b0056f1a4a7417cfcc01794cd2d799ad99387a38e78074b"
 
       def install
         bin.install name
@@ -41,9 +41,9 @@ class Cgit < Formula
         prefix.install_metafiles
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.10/cgit-linux-arm64.tar.gz"
-      sha256 "2454b83d43b74b896b84e1ddf17fba3c31f31453067a2389ff9acfc618b8a60f"
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.11/cgit-linux-amd64.tar.gz"
+      sha256 "2bba2c9fc78b6b75d702465144c6ffafe56b284bb6435e70fa7d4e209ff2831c"
 
       def install
         bin.install name
