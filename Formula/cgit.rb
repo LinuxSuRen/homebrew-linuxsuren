@@ -5,12 +5,12 @@
 class Cgit < Formula
   desc "cgit is a tiny tool for Chinese developers."
   homepage "https://github.com/linuxsuren/cgit"
-  version "0.0.12"
+  version "0.0.13"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.12/cgit-darwin-amd64.tar.gz"
-      sha256 "7f27195378bd6f5fe1852e7f3e801b37105d122f047058cc6d74d20110c166b8"
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.13/cgit-darwin-amd64.tar.gz"
+      sha256 "346057fe11bc0e964b0599e5743ccc7c8ba7d51d4e1022d9683d6994b071e0d4"
 
       def install
         bin.install name
@@ -19,8 +19,8 @@ class Cgit < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.12/cgit-darwin-arm64.tar.gz"
-      sha256 "3ee1da3291d2bc7b11c098dc1f33c683397eff4a294cca363a6abe653b8de321"
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.13/cgit-darwin-arm64.tar.gz"
+      sha256 "10a3756fe4e826f6917198f581d1eb14fd06ad650d9d10c39776e29cdc1d28b0"
 
       def install
         bin.install name
@@ -32,8 +32,8 @@ class Cgit < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.12/cgit-linux-arm64.tar.gz"
-      sha256 "789c1fe6a08e9a16ddbe0d4c82c510e8cabb86f16e8000a92e2840700812cf96"
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.13/cgit-linux-arm64.tar.gz"
+      sha256 "cd9e43fc821fd7e14933aa1181a0b930106579d0a723e5991fccb061f1d37fb1"
 
       def install
         bin.install name
@@ -42,8 +42,8 @@ class Cgit < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.12/cgit-linux-amd64.tar.gz"
-      sha256 "4db35e8de4fa26e87b870c75a53801c47e37cf9d6d3c5d79c304c0589f6462a1"
+      url "https://github.com/LinuxSuRen/cgit/releases/download/v0.0.13/cgit-linux-amd64.tar.gz"
+      sha256 "b080080a83e7f6ecb1c60b3c7b7ab86e4b720ee9705918da39a148a84da598bc"
 
       def install
         bin.install name
