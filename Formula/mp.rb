@@ -5,28 +5,42 @@
 class Mp < Formula
   desc "image mirror pull tool"
   homepage "https://github.com/linuxsuren/mirrors"
-  version "0.0.3"
-  bottle :unneeded
-
-  if OS.mac?
-    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.3/mp-darwin-amd64.tar.gz"
-    sha256 "630e76df9b33f6a97199b01f808d075bff3bd2fb666b8888ffeb53c411902d14"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.3/mp-linux-amd64.tar.gz"
-    sha256 "253be0a3a6d82d8e85a1c92835e88fa3400944292c581cecce692d7d90f9ac4a"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.3/mp-linux-arm64.tar.gz"
-    sha256 "bb83921b95d75236d226c5a784a3fcebb7ff032e3551ea43cc817c1342febe93"
-  end
+  version "0.0.4"
 
   depends_on "bash-completion" => :optional
 
-  def install
-    bin.install name
+  on_macos do
+    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.4/mp-darwin-amd64.tar.gz"
+    sha256 "8c99aaa8d1cbdb6cf093d7b112404a33841657c8876a063bf6f983d7628cdf0d"
 
-    prefix.install_metafiles
+    def install
+      bin.install name
+
+      prefix.install_metafiles
+    end
+
+    if Hardware::CPU.arm?
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the Mp
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.4/mp-linux-amd64.tar.gz"
+      sha256 "6e1038d1b81afc6f03fdb7814dcdbbf70a46f3cc0b08cb4fe712348055e5c8cd"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
+    end
   end
 
   test do
