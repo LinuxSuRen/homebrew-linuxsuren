@@ -5,13 +5,13 @@
 class Mp < Formula
   desc "image mirror pull tool"
   homepage "https://github.com/linuxsuren/mirrors"
-  version "0.0.5"
+  version "0.0.6"
 
   depends_on "bash-completion" => :optional
 
   on_macos do
-    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.5/mp-darwin-amd64.tar.gz"
-    sha256 "b00162c49ebbb95683d3d253f245c1ae38253c5c3a06aa01231303dd08fe1dd9"
+    url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.6/mp-darwin-amd64.tar.gz"
+    sha256 "0113cd7c1041338fbae324002a1999937fcf492e4253529726347e9a3d3e763f"
 
     def install
       bin.install name
@@ -32,8 +32,8 @@ class Mp < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.5/mp-linux-amd64.tar.gz"
-      sha256 "478d6be18f991821a7a4a93ef0150ad11811dfda81e76da5a54319c0f3805675"
+      url "https://github.com/LinuxSuRen/mirrors/releases/download/v0.0.6/mp-linux-amd64.tar.gz"
+      sha256 "3894e911f637b483482b39fafc7d81594c473f6415d21aa797f60656280f7cd1"
 
       def install
         bin.install name
