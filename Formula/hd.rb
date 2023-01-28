@@ -5,14 +5,14 @@
 class Hd < Formula
   desc "HTTP download tool"
   homepage "https://github.com/linuxsuren/http-downloader"
-  version "0.0.74"
+  version "0.0.75"
 
   depends_on "bash-completion" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.74/hd-darwin-amd64.tar.gz"
-      sha256 "e560c7231400345814f1923eb977b967f2c53d70381253cbd95df085dee2f63f"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.75/hd-darwin-amd64.tar.gz"
+      sha256 "909e7c036e40d063ca31016a579a3801210323e87586b0908bdfe4af8aa8ff9e"
 
       def install
         bin.install name
@@ -21,8 +21,8 @@ class Hd < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.74/hd-darwin-arm64.tar.gz"
-      sha256 "9ef76616a6abf779371ba0d7deb22efa4e28012ca844e4630f1e53088c0a4fe1"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.75/hd-darwin-arm64.tar.gz"
+      sha256 "0156a4c61339dccf426e63ae684dec167e41ff93995c09f7496416db175f2c8a"
 
       def install
         bin.install name
@@ -33,19 +33,9 @@ class Hd < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.74/hd-linux-arm6.tar.gz"
-      sha256 "73ca916ae3d20a2ccfb5df5a532b7e178591f31ac24a2e6c4e8c97499c3412e9"
-
-      def install
-        bin.install name
-
-        prefix.install_metafiles
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.74/hd-linux-amd64.tar.gz"
-      sha256 "a57f895e0273ebbd786517e8f77ca9e7e5c726367560f1748245b847637c5b2d"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.75/hd-linux-amd64.tar.gz"
+      sha256 "78fb0c0de7296caadeb49a7dc3ca4a0bacba8c3d34d10d680a9a6da48b639069"
 
       def install
         bin.install name
@@ -54,8 +44,18 @@ class Hd < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.74/hd-linux-arm64.tar.gz"
-      sha256 "6548651c1c6ef1706405a3572b7d96b29591236445845e9960530a28e2b78d39"
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.75/hd-linux-arm64.tar.gz"
+      sha256 "f8aaace05b643e67b64e7eb29c3beb7db5f5b860c5bcee33bfa28847b01e14fa"
+
+      def install
+        bin.install name
+
+        prefix.install_metafiles
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/LinuxSuRen/http-downloader/releases/download/v0.0.75/hd-linux-arm6.tar.gz"
+      sha256 "6d6e0193487a50d152b4e04453e44dbe2f08caf31cce7b9d96bf0df01e4a1aa0"
 
       def install
         bin.install name
